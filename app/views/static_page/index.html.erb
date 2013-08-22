@@ -1,0 +1,26 @@
+<h1 class="center">每天一笑</h1>
+
+<% @jokes.each do |joke| %>
+<div class="well">
+  <div class="row">
+    <div class="span12">
+    <p>
+	<h3 class="center"><%= joke.title %></h3>
+    </p>
+    <p><%= joke.content %></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span12">
+    <span class="label label-info">
+	分类:<%= joke.category %>
+    </span>
+
+    <span class="label label-info">
+	时间:<%= joke.time %>
+    </span>
+    </div>
+  </div>
+</div>
+<% end %>
+<%= will_paginate @jokes %>
